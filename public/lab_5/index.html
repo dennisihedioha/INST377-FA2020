@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head> 
+        <meta charset="utf-8">
+        <title>Dennis Ihedioha Lab 4</title>
+        <link rel="stylesheet" href="styles.css"/>
+    </head>
+
+    <body>
+       <div class= "container">
+            <h1>Dennis Ihedioha Lab 4</h1>
+            <div class="wrapper">
+                <form action="/api" method="post">  
+        
+                    <ul class="flex-outer">
+            
+            
+                        <li>
+                            <label for="fname">First Name</label>
+                            <input type="text" maxlength="140" id="fname" name="fname" placeholder="Enter your first name here">
+                        </li>
+                        <li>
+                            <label for="lname">Last Name</label>
+                            <input type="text" maxlength="140" id="lname" name="lname" placeholder="Enter your last name here">
+                         </li>
+                        <li>
+                            <label for="email-address">Email Address</label>
+                            <input type="email" id="email-address" name="email-address" placeholder="Enter your email here">
+                         </li>
+                        <li>
+                            <label for="phone-number">Phone</label>
+                            <input type="tel" id="phone-number" name= "phone-number" placeholder="Enter your phone here">
+                         </li>
+                        <li>
+                            <label for="message">Message</label>
+                            <textarea rows="5" cols= "33" id="message" name = "message" placeholder="Enter your message here"></textarea>
+                        </li>
+        
+                         <li>
+                            <p class='checkbox-list-label'>Fruits</p>
+      
+                             <ul class="flex-inner">
+            
+                             <li>
+                                <input type="checkbox" id="eighteen-to-thirty-five" name="eighteen-to-thirty-five">
+                                <label for="eighteen-to-thirty-five">18-35</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="thirty-five-to-fifty" name="thirty-five-to-fifty">
+                                <label for="thirty-five-to-fifty">35-50</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="fifty-to-sixty-five" name="fifty-to-sixty-five">
+                                <label for="fifty-to-sixty-five">50-65</label>
+                             </li>
+
+                             </ul>
+                        </li>
+                         <li>
+                             <button type="submit" id="button" name="button">Submit Form</button>
+                             <button type="button" onclick="testFunction()" class="button" id="active_button" name="active_button">Activate</button>
+                         </li>
+        
+        
+
+                    </ul>
+
+                </form>
+            </div>
+        </div>
+        <script>
+            function testFunction() {
+                fetch('/api')
+                .then((response) => response.text())
+                .then((response) => {
+                    console.log(response);
+    
+                    const elements = document.querySelectorAll('.flex-inner li label')
+                    const fruitArray = ['apple', 'kiwi', 'pomelo']
+                    elements.forEach((el,i) => {
+                    const text = el.innerText;
+                    console.log(text);
+                    el.innerText = fruitArray[i];
+                })
+                })
+            }
+    
+        </script>
+    </body>
+</html>
