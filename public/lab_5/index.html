@@ -76,14 +76,34 @@
                 .then((response) => {
                     console.log(response);
     
-                    const elements = document.querySelectorAll('.flex-inner li label')
-                    const fruitArray = ['apple', 'kiwi', 'pomelo']
-                    elements.forEach((el,i) => {
+                const elements = document.querySelectorAll('.flex-inner li label')
+                const fruitArray = ['apple', 'kiwi', 'pomelo']
+                elements.forEach((el,i) => {
                     const text = el.innerText;
                     console.log(text);
                     el.innerText = fruitArray[i];
                 })
+
+                const bgcol = 'rgb(' + (219) + ',' + (243) + ',' + (240) + ')'
+                document.body.style.backgroundColor = bgcol;
+
+                const head = document.querySelector('h1')
+                head.innerHTML = response;
+
+                const ttl = document.querySelector('title')
+                ttl.innerHTML = response;
+
+                const lel = document.querySelector('.checkbox-list-label')
+                lel.innerHTML = 'Fruits';
+
+                const cen = document.querySelector('.flex-outer')
+                cen.style = 'margin: 0 auto;';
+
                 })
+
+                
+            
+
             }
     
         </script>
