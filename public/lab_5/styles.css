@@ -1,9 +1,3 @@
-body {
-  font: normal 18px/1.5 "Times New Roman", "Times", serif;
-  background:yellow;
-  color: rgb(20, 11, 138);
-  padding: 50px 0;
-}
 
 .container {
   width: 80%;
@@ -90,3 +84,11 @@ body {
 .checkbox-list-label {
   
 }
+
+body {
+  font: normal 18px/1.5 "Times New Roman", "Times", serif;
+  background:yellow;
+  color: rgb(20, 11, 138);
+  padding: 50px 0;
+}
+
